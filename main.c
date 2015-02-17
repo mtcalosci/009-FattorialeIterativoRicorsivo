@@ -6,24 +6,40 @@ int fattorialeRicorsivo(int n);
 
 int main(int argc, char** argv) {
     int n;
-    int rIterativo, rRicorsivo;
+    int fIterativo, fRicorsivo;
     
     printf("Inserisci un numero naturale non negativo: ");
     scanf("%d", &n);
     
-    rIterativo = fattorialeIterativo(n);
-    rRicorsivo = fattorialeRicorsivo(n);
+    fIterativo = fattorialeIterativo(n);
+    fRicorsivo = fattorialeRicorsivo(n);
     
-    printf("%d! = %d (formulazione iterativa)\n", n, rIterativo);
-    printf("%d! = %d (formulazione iterativa)\n", n, rRicorsivo);
+    printf("%d! = %d (formulazione iterativa)\n", n, fIterativo);
+    printf("%d! = %d (formulazione ricorsiva)\n", n, fRicorsivo);
     return (EXIT_SUCCESS);
 }
 
 int fattorialeIterativo(int n) {
-    // TODO Implementa il corpo della funzione
-    return -1;
+    int Fat;
+    
+        for(Fat = 1; n>1; n--)
+            
+            {
+                Fat = Fat * n;
+            }
+    
+    return Fat;
 }
 int fattorialeRicorsivo(int n) {
-    // TODO Implementa il corpo della funzione
-    return -1;
+    int Fat;
+    
+    if(n == 0)
+        {
+            return 1;
+        }
+        else
+            {
+                Fat = n * fattorialeRicorsivo(n-1);
+            }  
+
 }
